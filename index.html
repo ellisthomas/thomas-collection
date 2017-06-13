@@ -2,8 +2,48 @@
 <html>
 <head>
 	<title>Thomas Collection</title>
+	
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="./lib/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./styles/main.css">
+
+
 </head>
-<body>
+<body ng-app="ThomasCollection">
+
+	<div ng-include="'partials/navbar.html'"></div>
+    <div class="row">
+        <h1 class="list-inline center-block text-center">Thomas Collection</h1>
+        <div class="col-xs-8 col-xs-offset-2" ng-view>
+        
+        </div>
+    </div>
+
+
+
+
+    <!-- Third party scripts -->
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <script type="text/javascript" src="./lib/bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="./lib/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/lib/bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/lib/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="/lib/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="./javascripts/vendor/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+
+	  <!-- Personal scripts -->
+    <script type="text/javascript" src="./javascripts/app.js"></script>
+    <script type="text/javascript" src="./javascripts/AppConfig.js"></script>
+    <script type="text/javascript" src="./javascripts/AppConstants.js"></script>
+    <script type="text/javascript" src="./javascripts/factories/AuthFactory.js"></script>
+    <script type="text/javascript" src="./javascripts/factories/UserFactory.js"></script>
+
+
+    <script type="text/javascript" src="./javascripts/controllers/AuthCtrl.js"></script>
+    <script type="text/javascript" scr="./javascripts/controllers/NavCtrl.js"></script>
 
 </body>
 </html>
