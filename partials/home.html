@@ -1,0 +1,25 @@
+<input type="text" name="" placeholder="Search for ..." ng-model="searchText">
+<h3>Collection Plate</h3>
+<div ng-repeat="shirt in shirts | filter: searchText">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <a href="{{shirt.image}}"><img src="{{shirt.image}}" alt=""></a>
+                <div class="caption">
+                    <p>{{shirt.title}}</p>
+                    <p>{{user.username}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- <div ng-repeat="pant in pants | filter: searchText">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <a href="{{pant.image}}"><img src="{{pant.image}}" alt=""></a>
+                        <div class="caption">
+                            <p>{{pant.title}}</p>
+                            <p>{{user.username}}</p>
+                        </div>
+                    </div>
+                </div> -->
+               

@@ -20,7 +20,7 @@ app.controller("AuthCtrl", function($location, $rootScope, $scope, AuthFactory, 
 		}).then((user) => {
 			console.log("user", user);
 			$rootScope.user = user;
-			$location.url("/men/items");
+			$location.url("/home");
 		}).catch((error) => {
 			console("getUser error", error);
 		});

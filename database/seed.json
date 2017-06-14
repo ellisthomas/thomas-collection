@@ -8,10 +8,11 @@
             "title": "Placeholder",
             "image": "/images/0087.jpg"
         },
-        "shirt2": "",
+        "shirt2": {
             "title": "Placeholder",
             "image": "/images/0088.jpg"
-       },
+        }
+    },
     "userShirts": {
         "userShirt0": {
             "shirtId": "",
@@ -28,15 +29,15 @@
     },
     "pants": {
         "pant0": {
-            "title": "Placeholder",
+            "title": "Pants",
             "image": "/images/IMG_2452.JPG"
         },
         "pant1": {
-            "title": "Placeholder",
+            "title": "Pants",
             "image": "/images/IMG_2455.JPG"
         },
         "pant2": {
-            "title": "Placeholder",
+            "title": "Pants",
             "image": "/images/IMG_2456.JPG"
         }
     },

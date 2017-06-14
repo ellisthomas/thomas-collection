@@ -1,1 +1,1 @@
-var app = angular.module("ThomasCollection", ["ngRoute", "ngSanitize","ui.bootstrap"]);
+var app = angular.module("ThomasCollection", ["ngAnimate", "ngRoute", "ngSanitize", "ui.bootstrap"]);
