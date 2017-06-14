@@ -58,6 +58,11 @@ app.config(function($routeProvider) {
             controller: "WomenItemsCtrl",
             resolve: {isAuth}
         })
+        .when("/look", {
+            templateUrl: "partials/look.html",
+            controller: "LookCtrl",
+            resolve: {isAuth}
+        })
         .when("/logout", {
             templateUrl: "partials/auth.html",
             controller: "AuthCtrl",

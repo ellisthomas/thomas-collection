@@ -37,6 +37,17 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         });
     };
 
-    return {getShirtsList:getShirtsList, getPantsList:getPantsList};
+    let postNewLook = (newLook) => {
+        return $q((resolve, reject) => {
+            $http.post(`${FIREBASE_CONFIG.databaseURL}/shirts/.json`, JSON.stringify(newLook))
+            .then((resultz) => {
+                resolve(resultz);
+            }).catch((error) => {
+                reject(error);
+            });
+        });
+    };
+
+    return {getShirtsList:getShirtsList, getPantsList:getPantsList, postNewLook:postNewLook};
 });
 

@@ -24,4 +24,6 @@ app.controller("HomeCtrl", function($rootScope, $scope, ClothingFactory) {
 
 	getPants();
 
+
+
 });

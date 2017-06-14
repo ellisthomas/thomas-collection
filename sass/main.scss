@@ -7,9 +7,6 @@
     -o-background-size: cover;
 }
 
-
-/* CSS used here will be applied after bootstrap.css */
-
 .panel-default {
     opacity: 0.9;
     margin-top: 30px;
@@ -19,4 +16,10 @@
     margin-bottom: 0px;
 }
 
+.logo {
+	width: 322px;
+	height: 102px;
+	margin-top: -40px;
+	margin-left: -20px;
+}
 
