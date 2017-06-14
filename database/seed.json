@@ -1,15 +1,15 @@
 {
     "shirts": {
         "shirt0": {
-            "title": "Placeholder",
+            "title": "Shirts",
             "image": "/images/0017.jpg"
         },
         "shirt1": {
-            "title": "Placeholder",
+            "title": "Shirts",
             "image": "/images/0087.jpg"
         },
         "shirt2": {
-            "title": "Placeholder",
+            "title": "Shirts",
             "image": "/images/0088.jpg"
         }
     },

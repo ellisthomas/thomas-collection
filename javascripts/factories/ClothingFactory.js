@@ -1,5 +1,5 @@
 app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
-	let getShirtsList = () => {
+	let getShirtsList = (userId) => {
         let shirtz = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/shirts.json`)
@@ -18,7 +18,7 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         });
     };
 
-    let getPantsList = () => {
+    let getPantsList = (userId) => {
         let pantz = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/pants.json`)
