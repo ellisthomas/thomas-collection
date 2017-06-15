@@ -1,25 +1,15 @@
 <div>
-	        
     <h3>Design Lab</h3>
-        <form>
-            <div class="form-group">
-                <label>Name Your Look</label>
-                <input type="text" class="form-control" placeholder="Title" ng-model="newLook.title"/>
-                
-                <div ng-model="newLook.image">
-
-                	<img ng-src="{{shirt.image}}" alt="">
-
-                </div>
-
-                <h1>{{selectedShirt.image}}</h1>
-
-                <h1>{{selectedPant.image}}</h1>
-                
+    <form>
+        <div class="form-group">
+            <label>Name Your Look</label>
+            <input type="text" class="form-control" placeholder="Title" ng-model="newLook.title" />
+            <div ng-model="newLook.image">
+                <img ng-src="{{shirt.image}}" alt="">
             </div>
-            <button class="btn btn-default" ng-click="addNewCollection(newCollection)">Create Collection</button>
-        </form>
-
-
-
+            <h1>{{selectedShirt.image}}</h1>
+            <h1>{{selectedPant.image}}</h1>
+        </div>
+        <a ng-href="#!/style"><button class="btn btn-default" ng-click="addNewStyle(newStyle)">Create Collection</button></a>
+    </form>
 </div>

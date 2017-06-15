@@ -15,16 +15,16 @@
     },
     "userShirts": {
         "userShirt0": {
-            "shirtId": "",
-            "uid": ""
+            "shirtId": "shirt0",
+            "uid": "1eBcl7sq2ueiOy9MVHAJO4uO1SF2"
         },
         "userShirt1": {
-            "shirtId": "",
-            "uid": ""
+            "shirtId": "shirt1",
+            "uid": "1eBcl7sq2ueiOy9MVHAJO4uO1SF2"
         },
         "userShirt2": {
-            "shirtId": "",
-            "uid": ""
+            "shirtId": "shirt2",
+            "uid": "cX8gL21RO1VYSjUwP9H80K4p0c92"
         }
     },
     "pants": {
@@ -43,16 +43,16 @@
     },
     "userPants": {
         "userPant0": {
-            "pantId": "",
-            "uid": ""
+            "pantId": "pant0",
+            "uid": "1eBcl7sq2ueiOy9MVHAJO4uO1SF2"
         },
         "userPant1": {
-            "pantId": "",
-            "uid": ""
+            "pantId": "pant1",
+            "uid": "1eBcl7sq2ueiOy9MVHAJO4uO1SF2"
         },
         "userPant2": {
-            "pantId": "",
-            "uid": ""
+            "pantId": "pant2",
+            "uid": "cX8gL21RO1VYSjUwP9H80K4p0c92"
         }
     },
     "userLook": {
@@ -60,13 +60,13 @@
             "uid": "3KAqfVLrBccHIqwXXZ9FxwSS2KP2",
             "usershirtId": "",
             "userpantId": "",
-            "title": ""
+            "title": "Casual"
         },
         "userLook1": {
             "uid": "1eBcl7sq2ueiOy9MVHAJO4uO1SF2",
             "usershirtId": "",
             "userpantId": "",
-            "title": ""
+            "title": "Hipster"
         }
     },
     "users": {

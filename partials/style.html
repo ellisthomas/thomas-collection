@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+		  <input type="text" class="input-lg list-inline center-block text-center" placeholder="Search Styles" ng-model="searchText">
+
+        <div class="aligner">
+			<img class="profile-pic" ng-src="{{shirt.image}}">
+			<p class="username">{{user.username}}</p>
+        </div>
+
+
+		<div ng-repeat="userLook in userLooks | filter: searchText" class="col-sm-3"> 
+		    <div class="panel panel-default">
+				<div class="panel-heading">
+				    <p class="panel-title"><a ng-href="#!/viewBoard/{{board.id}}">{{shirt.image}}</a></p>
+				    <div class="pull-right">
+					    <button class="btn btn-primary fa fa-pencil" ng-click=" "></button>
+					    <button class="btn btn-danger fa fa-trash-o" ng-click="deleteStyle(userLook.id)"></button>
+				    </div>
+				</div>
+		
+		    </div>
+		</div>
+
+	</div>
+			
+</div>
+
+

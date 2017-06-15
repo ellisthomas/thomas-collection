@@ -39,7 +39,7 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
 
     let getSingleShirt = (id) => {
         return $q((resolve, reject) => {
-            $http.get(`${FIREBASE_CONFIG.databaseURL}/shirt/{id}.json`)
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/shirts/{id}.json`)
             .then((resultz) => {
                 resolve(resultz);
             }).catch((error) => {
@@ -64,6 +64,6 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         });
     };
 
-    return {getShirtsList:getShirtsList, getPantsList:getPantsList, postNewLook:postNewLook};
+    return {getShirtsList:getShirtsList, getPantsList:getPantsList, getSingleShirt:getSingleShirt, postNewLook:postNewLook};
 });
 
