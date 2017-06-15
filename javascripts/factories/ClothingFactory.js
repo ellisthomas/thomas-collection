@@ -37,10 +37,26 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         });
     };
 
+    let getSingleShirt = (id) => {
+        return $q((resolve, reject) => {
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/shirt/{id}.json`)
+            .then((resultz) => {
+                resolve(resultz);
+            }).catch((error) => {
+                reject(error);
+            });
+        });
+    };
+
     let postNewLook = (newLook) => {
         return $q((resolve, reject) => {
-            $http.post(`${FIREBASE_CONFIG.databaseURL}/shirts/.json`, JSON.stringify(newLook))
-            .then((resultz) => {
+            $http.post(`${FIREBASE_CONFIG.databaseURL}/userShirt.json`, 
+                JSON.stringify({
+                shirtId : newLook.shirtId,
+                uid : newLook.uid,
+                image : newLook.image
+            })
+            ).then((resultz) => {
                 resolve(resultz);
             }).catch((error) => {
                 reject(error);

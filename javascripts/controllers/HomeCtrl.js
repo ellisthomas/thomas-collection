@@ -1,4 +1,4 @@
-app.controller("HomeCtrl", function($rootScope, $scope, ClothingFactory) {
+app.controller("HomeCtrl", function($rootScope, $location, $scope, ClothingFactory) {
 	$scope.shirts = [];
 	$scope.pants = [];
 
@@ -24,6 +24,19 @@ app.controller("HomeCtrl", function($rootScope, $scope, ClothingFactory) {
 
 	getPants();
 
+	$scope.newLook = [];
+
+	$scope.addNewLook = (shirt) => {
+		console.log("what is shirt", shirt);
+		$scope.newLook = shirt;
+		$scope.newLook.uid = $rootScope.user.uid;
+		ClothingFactory.postNewLook($scope.newLook).then((response) => {
+			$scope.newLook = {};
+			// $location.url("/look");
+		}).catch((error) => {
+			console.log("add look error", error);
+		});
+	};
 
 
 });

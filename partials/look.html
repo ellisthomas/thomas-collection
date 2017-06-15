@@ -8,12 +8,16 @@
                 
                 <div ng-model="newLook.image">
 
-                	<img src="{{shirt.image}}" alt="">
+                	<img ng-src="{{shirt.image}}" alt="">
 
                 </div>
+
+                <h1>{{selectedShirt.image}}</h1>
+
+                <h1>{{selectedPant.image}}</h1>
                 
             </div>
-            <button class="btn btn-default" ng-click="">Create Collection</button>
+            <button class="btn btn-default" ng-click="addNewCollection(newCollection)">Create Collection</button>
         </form>
 
 

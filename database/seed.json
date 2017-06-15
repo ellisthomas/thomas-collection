@@ -16,15 +16,15 @@
     "userShirts": {
         "userShirt0": {
             "shirtId": "",
-            "uid": "3KAqfVLrBccHIqwXXZ9FxwSS2KP2"
+            "uid": ""
         },
         "userShirt1": {
-            "shirtId": "1eBcl7sq2ueiOy9MVHAJO4uO1SF2",
+            "shirtId": "",
             "uid": ""
         },
         "userShirt2": {
             "shirtId": "",
-            "uid": "cX8gL21RO1VYSjUwP9H80K4p0c92"
+            "uid": ""
         }
     },
     "pants": {
@@ -44,15 +44,15 @@
     "userPants": {
         "userPant0": {
             "pantId": "",
-            "uid": "3KAqfVLrBccHIqwXXZ9FxwSS2KP2"
+            "uid": ""
         },
         "userPant1": {
             "pantId": "",
-            "uid": "1eBcl7sq2ueiOy9MVHAJO4uO1SF2"
+            "uid": ""
         },
         "userPant2": {
             "pantId": "",
-            "uid": "cX8gL21RO1VYSjUwP9H80K4p0c92"
+            "uid": ""
         }
     },
     "userLook": {

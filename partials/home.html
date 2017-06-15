@@ -4,11 +4,10 @@
     <div class="row">
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="{{shirt.image}}"><img src="{{shirt.image}}" alt=""></a>
+                <a ng-href="{{shirt.image}}"><img ng-src="{{shirt.image}}" alt=""></a>
                 <div class="caption">
                     <p>{{shirt.title}}</p>
-                    <!-- <p>{{user.username}}</p> -->
-                    <button class="fa fa-plus-circle" aria-hidden="true" ng-click="addNewLook()"></button>
+                    <a ng-href="#!/look"> <button class="fa fa-plus-circle" aria-hidden="true" ng-click="addNewLook(shirt)"></button></a>
                 </div>
             </div>
         </div>
@@ -18,13 +17,13 @@
     <div class="row">
         <div class="col-md-4">
             <div class="thumbnail">
-                <a href="{{pant.image}}"><img src="{{pant.image}}" alt=""></a>
+                <a ng-href="{{pant.image}}"><img ng-src="{{pant.image}}" alt=""></a>
                 <div class="caption">
                     <p>{{pant.title}}</p>
-                    <!-- <p>{{user.username}}</p> -->
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
