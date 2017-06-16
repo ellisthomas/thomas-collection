@@ -1,5 +1,7 @@
 <input type="text" name="" placeholder="Search for ..." ng-model="searchText">
 <h3>Collection Plate</h3>
+
+<button>Create Look</button>
 <div ng-repeat="shirt in shirts | filter: searchText">
     <div class="row">
         <div class="col-md-4">
@@ -7,7 +9,7 @@
                 <a ng-href="{{shirt.image}}"><img ng-src="{{shirt.image}}" alt=""></a>
                 <div class="caption">
                     <p>{{shirt.title}}</p>
-                    <a ng-href="#!/look"> <button class="fa fa-plus-circle" aria-hidden="true" ng-click="addNewLook(shirt)"></button></a>
+                 <button class="fa fa-plus-circle" aria-hidden="true" ng-click="addNewLook(shirt)"></button>
                 </div>
             </div>
         </div>
@@ -20,6 +22,7 @@
                 <a ng-href="{{pant.image}}"><img ng-src="{{pant.image}}" alt=""></a>
                 <div class="caption">
                     <p>{{pant.title}}</p>
+                    <button class="fa fa-plus-circle" aria-hidden="true" ng-click="addNewLook(pant)"></button>
                 </div>
             </div>
         </div>

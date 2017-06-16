@@ -1,5 +1,26 @@
 app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
-	let getShirtsList = (userId) => {
+
+    let lastSelectedShirt = "";
+    let lastSelectedPant = "";
+
+    let setLastSelectedShirt = (shirtId) => {
+        lastSelectedShirt = shirtId;
+    };
+
+    let setLastSelectedPant = (pantId) => {
+        lastSelectedPant = pantId;
+    };
+
+    let getLastSelectedShirt = () => {
+        return lastSelectedShirt;
+    };
+
+    let getLastSelectedPant = () => {
+        return lastSelectedPant;
+    };
+
+
+    let getShirtsList = (userId) => {
         let shirtz = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/shirts.json`)
@@ -14,7 +35,7 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
                     resolve(shirtz);
                 }).catch((error) => {
                     reject(error);
-            });
+                });
         });
     };
 
@@ -22,40 +43,51 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         let pantz = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/pants.json`)
-            .then((fbItems) => {
-                let pantCollecetion = fbItems.data;
-                if(pantCollecetion !== null) {
-                    Object.keys(pantCollecetion).forEach((key) => {
-                        pantCollecetion[key].id = key;
-                        pantz.push(pantCollecetion[key]);
-                    });
-                }
-                resolve(pantz);
-            }).catch((error) => {
-                reject(error);
-            });
+                .then((fbItems) => {
+                    let pantCollecetion = fbItems.data;
+                    if (pantCollecetion !== null) {
+                        Object.keys(pantCollecetion).forEach((key) => {
+                            pantCollecetion[key].id = key;
+                            pantz.push(pantCollecetion[key]);
+                        });
+                    }
+                    resolve(pantz);
+                }).catch((error) => {
+                    reject(error);
+                });
         });
     };
 
     let getSingleShirt = (id) => {
         return $q((resolve, reject) => {
-            $http.get(`${FIREBASE_CONFIG.databaseURL}/shirts/{id}.json`)
-            .then((resultz) => {
-                resolve(resultz);
-            }).catch((error) => {
-                reject(error);
-            });
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/shirts/${id}.json`)
+                .then((resultz) => {
+                    resolve(resultz);
+                }).catch((error) => {
+                    reject(error);
+                });
         });
     };
 
+    // let getSinglePant = (id) => {
+    //     return $q((resolve, reject) => {
+    //         $http.get(`${FIREBASE_CONFIG.databaseURL}/pants/${id}.json`)
+    //         .then((resultz) => {
+    //             resolve(resultz);
+    //         }).catch((error) => {
+    //             reject(error);
+    //         });
+    //     });
+    // };
+
     let postNewLook = (newLook) => {
         return $q((resolve, reject) => {
-            $http.post(`${FIREBASE_CONFIG.databaseURL}/userShirt.json`, 
+            $http.post(`${FIREBASE_CONFIG.databaseURL}/userShirt.json`,
                 JSON.stringify({
-                shirtId : newLook.shirtId,
-                uid : newLook.uid,
-                image : newLook.image
-            })
+                    shirtId: newLook.shirtId,
+                    uid: newLook.uid,
+                    image: newLook.image
+                })
             ).then((resultz) => {
                 resolve(resultz);
             }).catch((error) => {
@@ -64,6 +96,5 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         });
     };
 
-    return {getShirtsList:getShirtsList, getPantsList:getPantsList, getSingleShirt:getSingleShirt, postNewLook:postNewLook};
+    return { getShirtsList: getShirtsList, getPantsList: getPantsList, getSingleShirt: getSingleShirt, postNewLook: postNewLook, setLastSelectedShirt: setLastSelectedShirt, setLastSelectedPant: setLastSelectedPant, getLastSelectedShirt: getLastSelectedShirt, getLastSelectedPant: getLastSelectedPant };
 });
-
