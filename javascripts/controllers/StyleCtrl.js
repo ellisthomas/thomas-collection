@@ -7,7 +7,7 @@ app.controller("StyleCtrl", function($rootScope, $http, $location, $q, $scope, F
 		$scope.newStyle.uid = $rootScope.user.uid;
 		ClothingFactory.postNewStyle($scope.newStyle).then((response) => {
 			$scope.newStyle = {};
-			// $location.url("/look");
+			$location.url("/style");
 		}).catch((error) => {
 			console.log("add look error", error);
 		});

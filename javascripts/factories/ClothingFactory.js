@@ -69,16 +69,16 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         });
     };
 
-    // let getSinglePant = (id) => {
-    //     return $q((resolve, reject) => {
-    //         $http.get(`${FIREBASE_CONFIG.databaseURL}/pants/${id}.json`)
-    //         .then((resultz) => {
-    //             resolve(resultz);
-    //         }).catch((error) => {
-    //             reject(error);
-    //         });
-    //     });
-    // };
+    let getSinglePant = (id) => {
+        return $q((resolve, reject) => {
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/pants/${id}.json`)
+                .then((resultz) => {
+                    resolve(resultz);
+                }).catch((error) => {
+                    reject(error);
+                });
+        });
+    };
 
     let postNewLook = (newLook) => {
         return $q((resolve, reject) => {
@@ -96,5 +96,5 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         });
     };
 
-    return { getShirtsList: getShirtsList, getPantsList: getPantsList, getSingleShirt: getSingleShirt, postNewLook: postNewLook, setLastSelectedShirt: setLastSelectedShirt, setLastSelectedPant: setLastSelectedPant, getLastSelectedShirt: getLastSelectedShirt, getLastSelectedPant: getLastSelectedPant };
+    return { getShirtsList: getShirtsList, getPantsList: getPantsList, getSingleShirt: getSingleShirt, postNewLook: postNewLook, setLastSelectedShirt: setLastSelectedShirt, getSinglePant: getSinglePant, setLastSelectedPant: setLastSelectedPant, getLastSelectedShirt: getLastSelectedShirt, getLastSelectedPant: getLastSelectedPant };
 });
