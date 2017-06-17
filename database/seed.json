@@ -1,15 +1,15 @@
 {
     "shirts": {
         "shirt0": {
-            "title": "Shirts",
+            "title": "Red",
             "image": "/images/IMG_2455.JPG"
         },
         "shirt1": {
-            "title": "Shirts",
+            "title": "Blue",
             "image": "/images/0087.jpg"
         },
         "shirt2": {
-            "title": "Shirts",
+            "title": "Green",
             "image": "/images/0088.jpg"
         }
     },
@@ -29,15 +29,15 @@
     },
     "pants": {
         "pant0": {
-            "title": "Pants",
+            "title": "Black",
             "image": "/images/IMG_2452.JPG"
         },
         "pant1": {
-            "title": "Pants",
+            "title": "Orange",
             "image": "/images/IMG_2455.JPG"
         },
         "pant2": {
-            "title": "Pants",
+            "title": "Yellow",
             "image": "/images/IMG_2456.JPG"
         }
     },
@@ -58,14 +58,14 @@
     "userLook": {
         "userLook0": {
             "uid": "3KAqfVLrBccHIqwXXZ9FxwSS2KP2",
-            "usershirtId": "",
-            "userpantId": "",
+            "usershirtId": "shirt0",
+            "userpantId": "pant0",
             "title": "Casual"
         },
         "userLook1": {
             "uid": "1eBcl7sq2ueiOy9MVHAJO4uO1SF2",
-            "usershirtId": "",
-            "userpantId": "",
+            "usershirtId": "shirt1",
+            "userpantId": "pant1",
             "title": "Hipster"
         }
     },

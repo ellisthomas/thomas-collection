@@ -59,10 +59,15 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
     };
 
     let getSingleShirt = (id) => {
+        let singleShirtz = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/shirts/${id}.json`)
                 .then((resultz) => {
-                    resolve(resultz);
+                    let singleShirt = resultz.data;
+                    if(singleShirt !== null) {
+                        singleShirt.id = id;
+                    }
+                    resolve(resultz.data);
                 }).catch((error) => {
                     reject(error);
                 });
@@ -70,25 +75,36 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
     };
 
     let getSinglePant = (id) => {
+        let singlePantz = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/pants/${id}.json`)
                 .then((resultz) => {
-                    resolve(resultz);
+                    console.log("resultz", resultz);
+                    let singlePant = resultz.data;
+                    if(singlePant !== null) {
+                        singlePant.id = id;
+                    }
+                    console.log("resultz.data", resultz.data);
+                    resolve(resultz.data);
                 }).catch((error) => {
                     reject(error);
                 });
         });
     };
 
-    let postNewLook = (newLook) => {
+    let postNewLook = (title, userLook, uid) => {
+        console.log("title", title);
+        console.log("userLook", userLook);
         return $q((resolve, reject) => {
-            $http.post(`${FIREBASE_CONFIG.databaseURL}/userShirt.json`,
+            $http.post(`${FIREBASE_CONFIG.databaseURL}/userLook.json`,
                 JSON.stringify({
-                    shirtId: newLook.shirtId,
-                    uid: newLook.uid,
-                    image: newLook.image
+                    title: title,
+                    uid: userLook.uid,
+                    userpantId: userLook.pantId,
+                    usershirtId: userLook.shirtId
                 })
             ).then((resultz) => {
+                console.log("resultz", resultz);
                 resolve(resultz);
             }).catch((error) => {
                 reject(error);
