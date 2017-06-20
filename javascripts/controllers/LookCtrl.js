@@ -18,17 +18,17 @@ app.controller("LookCtrl", function($rootScope, $http, $location, $q, $scope, FI
     });
 
 
-    $scope.userLook = [];
   
     $scope.title = "";
 
-    $scope.addNewStyle = (title, userLook) => {
-        $scope.title = title;
-        $scope.userLook = userLook;
-        // $scope.userLook.uid = $rootScope.user.uid;
-        ClothingFactory.postNewLook($rootScope.user.uid, $scope.title, $scope.userLook).then((response) => {
-            // $scope.newShirt = {};
-            // $scope.newPant = {};
+    $scope.addNewStyle = (title) => {
+        let userLook = {
+			title: title,
+            uid: $rootScope.user.uid,
+            userpantId: $scope.pant.id,
+            usershirtId: $scope.shirt.id
+            };
+        ClothingFactory.postNewLook(userLook).then((response) => {
             $location.url("/style");
         }).catch((error) => {
             console.log("add look error", error);

@@ -1,22 +1,24 @@
 <div>
-    <h3>Design Lab</h3>
+    <h3>New Look</h3>
         <div class="form-group">
             <label>Name Your Look</label>
             <input type="text" class="form-control" placeholder="Title" ng-model="title"/>
         </div>
         <div col-xs-4>
             <h3>Outfit</h3>
-                Selected Shirt: {{shirt.title}}
+                Selected Shirt: <img ng-src="{{shirt.image}}" alt="">
                 
         </div>
 
         <div col-xs-4>
-            Selected Shirt: {{shirt.image}}
+            Selected Pant: <img ng-src="{{pant.image}}" alt="">
 
-        </div>    
+        </div>   
+
+        
 
 
-        <button class="btn btn-default" ng-click="addNewStyle(userLook)">Create Collection</button>
+        <button class="btn btn-default" ng-click="addNewStyle(title)">Create Collection</button>
 </div>
 
 

@@ -92,17 +92,10 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         });
     };
 
-    let postNewLook = (title, userLook, uid) => {
-        console.log("title", title);
-        console.log("userLook", userLook);
+    let postNewLook = (userLook) => {
         return $q((resolve, reject) => {
             $http.post(`${FIREBASE_CONFIG.databaseURL}/userLook.json`,
-                JSON.stringify({
-                    title: title,
-                    uid: userLook.uid,
-                    userpantId: userLook.pantId,
-                    usershirtId: userLook.shirtId
-                })
+                JSON.stringify(userLook)
             ).then((resultz) => {
                 console.log("resultz", resultz);
                 resolve(resultz);
@@ -112,5 +105,24 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         });
     };
 
-    return { getShirtsList: getShirtsList, getPantsList: getPantsList, getSingleShirt: getSingleShirt, postNewLook: postNewLook, setLastSelectedShirt: setLastSelectedShirt, getSinglePant: getSinglePant, setLastSelectedPant: setLastSelectedPant, getLastSelectedShirt: getLastSelectedShirt, getLastSelectedPant: getLastSelectedPant };
+    // let getUserLook = (userId) => {
+    //     let lookz = [];
+    //     return $q((resolve, reject) => {
+    //         $http.get(`${FIREBASE_CONFIG.databaseURL}/userLook.json`)
+    //             .then((fbItems) => {
+    //                 let lookCollection = fbItems.data;
+    //                 if (lookCollection !== null) {
+    //                     Object.keys(lookCollection).forEach((key) => {
+    //                         lookCollection[key].id = key;
+    //                         lookz.push(shirtCollection[key]);
+    //                     });
+    //                 }
+    //                 resolve(lookz);
+    //             }).catch((error) => {
+    //                 reject(error);
+    //             });
+    //     });
+    // };
+
+    return { getShirtsList: getShirtsList, getPantsList: getPantsList, getSingleShirt: getSingleShirt, postNewLook: postNewLook, setLastSelectedShirt: setLastSelectedShirt, getSinglePant: getSinglePant, setLastSelectedPant: setLastSelectedPant, getLastSelectedShirt: getLastSelectedShirt, getLastSelectedPant: getLastSelectedPant};
 });
