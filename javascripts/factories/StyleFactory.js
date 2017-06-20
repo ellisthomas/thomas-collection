@@ -1,5 +1,35 @@
-app.factory("StyleFactory", function($http, $q, FIREBASE_CONFIG) {
+app.factory("StyleFactory", function($http, $q, FIREBASE_CONFIG, ClothingFactory) {
 	console.log("inside the StyleFactory app.factory");
+
+
+    let userSelectedShirt = "";
+    let userSelectedPant = "";
+
+    let setUserSelectedShirt = (shirtId) => {
+        userSelectedShirt = shirtId;
+    };
+    let setUserSelectedPant = (pantId) => {
+        userSelectedPant = pantId;
+    };
+
+    let getUserShirt = (shirt) => {
+        ClothingFactory.getSingleShirt(shirt.usershirtId).then((shirtData) => {
+            console.log("shirtData", shirtData);
+            shirt.image = shirtData.image;
+        }).catch((error) => {
+            console.log("error in getUserShirt", error);
+        });
+    };
+
+    let getUserSelectedShirt = () => {
+        return userSelectedShirt;
+    };
+
+    let getUserSelectedPant= () => {
+        return userSelectedPant;
+    };
+
+
 
     let getUserLook = (userId) => {
         // console.log("are we here", userId);
@@ -15,6 +45,11 @@ app.factory("StyleFactory", function($http, $q, FIREBASE_CONFIG) {
                         });
                     }
                     console.log("stylez", stylez);
+                    stylez.forEach((style) => {
+                        getUserShirt(style);
+                        // console.log("style.userpantId", style.userpantId);
+                        // console.log("style.usershirtId", style.usershirtId);
+                    });
                     resolve(stylez);
                 }).catch((error) => {
                     console.log("error in getUserLook", error);
@@ -38,7 +73,7 @@ app.factory("StyleFactory", function($http, $q, FIREBASE_CONFIG) {
 
 
 
-    return {getUserLook:getUserLook, deletzStyle:deletzStyle};
+    return {getUserLook:getUserLook, deletzStyle:deletzStyle, setUserSelectedShirt:setUserSelectedShirt, setUserSelectedPant:setUserSelectedPant, getUserSelectedShirt:getUserSelectedShirt, getUserSelectedPant:getUserSelectedPant};
 
 
 });

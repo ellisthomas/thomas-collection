@@ -105,24 +105,6 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         });
     };
 
-    // let getUserLook = (userId) => {
-    //     let lookz = [];
-    //     return $q((resolve, reject) => {
-    //         $http.get(`${FIREBASE_CONFIG.databaseURL}/userLook.json`)
-    //             .then((fbItems) => {
-    //                 let lookCollection = fbItems.data;
-    //                 if (lookCollection !== null) {
-    //                     Object.keys(lookCollection).forEach((key) => {
-    //                         lookCollection[key].id = key;
-    //                         lookz.push(shirtCollection[key]);
-    //                     });
-    //                 }
-    //                 resolve(lookz);
-    //             }).catch((error) => {
-    //                 reject(error);
-    //             });
-    //     });
-    // };
 
     return { getShirtsList: getShirtsList, getPantsList: getPantsList, getSingleShirt: getSingleShirt, postNewLook: postNewLook, setLastSelectedShirt: setLastSelectedShirt, getSinglePant: getSinglePant, setLastSelectedPant: setLastSelectedPant, getLastSelectedShirt: getLastSelectedShirt, getLastSelectedPant: getLastSelectedPant};
 });
