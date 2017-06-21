@@ -1,0 +1,58 @@
+    <div uib-alert ng-repeat="alert in alerts" class="alert-danger">{{alert.msg}}</div>
+<div class="auth">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>Login</strong>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">
+                                    Email</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email" ng-model="auth.email" required autofocus>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-3 control-label">
+                                    Password</label>
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password" ng-model="auth.password" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="input3" class="col-sm-3 control-label">
+                                    Username</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="inputUsername3" placeholder="Username" ng-model="auth.username">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Remember me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group last">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <button type="submit" class="btn btn-success btn-sm" ng-click="loginUser()">
+                                        Sign in</button>
+                                    <button type="submit" class="btn btn-default btn-sm" ng-click="registerUser()">
+                                        Regiser</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-footer">
+                        Not Registered? <a href="#">Please Register</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

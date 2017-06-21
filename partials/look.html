@@ -1,0 +1,28 @@
+<div>
+    <h3>New Look</h3>
+        <div class="form-group">
+            <label>Name Your Look</label>
+            <input type="text" class="form-control" placeholder="Title" ng-change="inputChange(userLook)" ng-model="title"/>
+        </div>
+
+
+        <div col-xs-4>
+            <h3>Outfit</h3>
+                Selected Shirt: <img ng-src="{{shirt.image}}" alt="" ng-if="!editTitle">
+                
+        </div>
+
+        <div col-xs-4>
+            Selected Pant: <img ng-src="{{pant.image}}" alt="" ng-if="!editTitle">
+
+        </div>   
+
+        
+
+
+        <button class="btn btn-default" ng-if="!editTitle" ng-click="addNewStyle(title)">Create Collection</button>
+
+        <button class="btn btn-danger" ng-if="editTitle" ng-click="editLook(userLook)">Edit Look</button>
+</div>
+
+

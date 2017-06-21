@@ -1,0 +1,45 @@
+<input type="text" name="" placeholder="Search for ..." ng-model="searchText">
+<h3>Collection Plate</h3>
+
+<div>
+    <h4>Outfit</h4>
+    <div col-xs-4>
+        Shirt Selected: {{outfit.shirt}}
+    </div>
+    <div col-xs-4>
+        Pants Selected: {{outfit.pants}}
+    </div>
+    <div col-xs-4>
+        <button ng-click="viewLookBook()">See Outfit</button>
+    </div>
+</div>
+
+
+<div ng-repeat="shirt in shirts | filter: searchText">
+    <!-- <div class="row"> -->
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <a ng-href="{{shirt.image}}"><img ng-src="{{shirt.image}}" alt=""></a>
+                <div class="caption">
+                    <p>{{shirt.title}}</p>
+                 <button class="fa fa-plus-circle" aria-hidden="true" ng-click="addShirtLook(shirt)"></button>
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+</div>
+<div ng-repeat="pant in pants | filter: searchText">
+    <!-- <div class="row"> -->
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <a ng-href="{{pant.image}}"><img ng-src="{{pant.image}}" alt=""></a>
+                <div class="caption">
+                    <p>{{pant.title}}</p>
+                    <button class="fa fa-plus-circle" aria-hidden="true" ng-click="addPantLook(pant)"></button>
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+</div>
+
+
