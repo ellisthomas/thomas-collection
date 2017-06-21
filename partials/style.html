@@ -3,21 +3,18 @@
 
  		<div col-xs-4>
  			<p>Username: {{user.username}}</p>
+ 			<p>Title: {{look.title}}</p>
+			
+			<img ng-src="{{look.shirtimage}}" alt="">
 
+
+<button class="btn btn-danger"><a ng-href="#!/style/edit/{{look.id}}">Edit</a></button>
         </div> 
 
-		<div col-xs-4>
- 			<p>Selected Title:  {{look.title}}</p>
+<div>Pants Below</div>
 
-        </div>  
 
-		<div col-xs-4>
- 			Selected Shirt: <img src="{{look.image}}" alt="">
 
-        </div>   
-
-        <div col-xs-4>
-            Selected Pant: <img ng-src="{{}}" alt="">
-
-        </div>   
+		
+        <img ng-src="{{look.pantimage}}">
 </div>

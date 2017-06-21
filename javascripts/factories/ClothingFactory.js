@@ -64,7 +64,7 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/shirts/${id}.json`)
                 .then((resultz) => {
                     let singleShirt = resultz.data;
-                    if(singleShirt !== null) {
+                    if (singleShirt !== null) {
                         singleShirt.id = id;
                     }
                     resolve(resultz.data);
@@ -79,9 +79,9 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/pants/${id}.json`)
                 .then((resultz) => {
-                    console.log("resultz", resultz);
+                    // console.log("resultz", resultz);
                     let singlePant = resultz.data;
-                    if(singlePant !== null) {
+                    if (singlePant !== null) {
                         singlePant.id = id;
                     }
                     console.log("resultz.data", resultz.data);
@@ -92,12 +92,23 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         });
     };
 
+    let editLook = (userLook) => {
+        return $q((resolve, reject) => {
+            $http.put(`${FIREBASE_CONFIG.databaseURL}/userLook/${userLook.id}.json`,
+             JSON.stringify(userLook)
+           ).then((resultz) => {
+                resolve(resultz);
+            }).catch((error) => {
+                reject(error);
+            });
+        });
+    };
+
     let postNewLook = (userLook) => {
         return $q((resolve, reject) => {
             $http.post(`${FIREBASE_CONFIG.databaseURL}/userLook.json`,
                 JSON.stringify(userLook)
             ).then((resultz) => {
-                console.log("resultz", resultz);
                 resolve(resultz);
             }).catch((error) => {
                 reject(error);
@@ -106,5 +117,5 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
     };
 
 
-    return { getShirtsList: getShirtsList, getPantsList: getPantsList, getSingleShirt: getSingleShirt, postNewLook: postNewLook, setLastSelectedShirt: setLastSelectedShirt, getSinglePant: getSinglePant, setLastSelectedPant: setLastSelectedPant, getLastSelectedShirt: getLastSelectedShirt, getLastSelectedPant: getLastSelectedPant};
+    return { getShirtsList: getShirtsList, getPantsList: getPantsList, getSingleShirt: getSingleShirt, postNewLook: postNewLook, setLastSelectedShirt: setLastSelectedShirt, getSinglePant: getSinglePant, setLastSelectedPant: setLastSelectedPant, getLastSelectedShirt: getLastSelectedShirt, getLastSelectedPant: getLastSelectedPant, editLook:editLook};
 });

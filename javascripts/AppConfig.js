@@ -68,6 +68,11 @@ app.config(function($routeProvider) {
             controller: "StyleCtrl",
             resolve: {isAuth}
         })
+        .when("/style/edit/:id", {
+            templateUrl: "partials/look.html",
+            controller: "StyleEditCtrl",
+            resolve: {isAuth}
+        })
         .when("/logout", {
             templateUrl: "partials/auth.html",
             controller: "AuthCtrl",
