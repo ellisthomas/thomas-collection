@@ -3,9 +3,8 @@ app.controller("StyleEditCtrl", function($location, $routeParams, $scope, Clothi
    let look;
 
     StyleFactory.getSingleUserLook($routeParams.id).then((results) => {
-       $scope.title = results.data.title;
-       look = results.data;
-       // console.log("getSingleUserLook", results.data);
+       $scope.title = results.title;
+       look = results;
     }).catch((error) => {
 
     	console.log("getSingleUserLook", error);
@@ -16,10 +15,10 @@ app.controller("StyleEditCtrl", function($location, $routeParams, $scope, Clothi
 
 
 
-    $scope.editLook = () => {
+    $scope.editLook = (userLook) => {
         look.title = $scope.title;
     	ClothingFactory.editLook(look).then((results) => {
-            console.log("results", results);
+            // console.log("results", results);
     		$location.url("/style");
     	}).catch((error) => {
     		console.log("editLook", error);

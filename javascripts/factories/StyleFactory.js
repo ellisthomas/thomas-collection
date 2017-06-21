@@ -56,7 +56,7 @@ app.factory("StyleFactory", function($http, $q, FIREBASE_CONFIG, ClothingFactory
                         getUserShirt(style);
                         getUserPant(style);
                         // console.log("style.userpantId", style.userpantId);
-                        console.log("style.usershirtId", style.usershirtId);
+                        // console.log("style.usershirtId", style.usershirtId);
                     });
                     resolve(stylez);
                 }).catch((error) => {
@@ -69,8 +69,9 @@ app.factory("StyleFactory", function($http, $q, FIREBASE_CONFIG, ClothingFactory
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/userLook/${id}.json`)
             .then((resultz) => {
-                resultz.id = id;
-                resolve(resultz);
+                resultz.data.id = id;
+                console.log("resultz", resultz);
+                resolve(resultz.data);
             }).catch((error) => {
             reject(error);
             });

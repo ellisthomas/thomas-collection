@@ -1,20 +1,11 @@
 <h1>Look Book</h1>
 <div ng-repeat="look in looks">
-
- 		<div col-xs-4>
- 			<p>Username: {{user.username}}</p>
- 			<p>Title: {{look.title}}</p>
-			
-			<img ng-src="{{look.shirtimage}}" alt="">
-
-
-<button class="btn btn-danger"><a ng-href="#!/style/edit/{{look.id}}">Edit</a></button>
-        </div> 
-
-<div>Pants Below</div>
-
-
-
-		
+    <div col-xs-4>
+        <p>Username: {{user.username}}</p>
+        <p>Title: {{look.title}}</p>
+        <img ng-src="{{look.shirtimage}}" alt="">
         <img ng-src="{{look.pantimage}}">
+        <button class="btn btn-default"><a ng-href="#!/style/edit/{{look.id}}">Edit</a></button>
+        <button class="btn btn-danger" ng-click="deleteLook(look.id)">Delete</button>
+    </div>
 </div>

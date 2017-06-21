@@ -1,5 +1,0 @@
-app.controller("WomenItemsCtrl", function() {
-	
-});
-
-

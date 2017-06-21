@@ -93,6 +93,7 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
     };
 
     let editLook = (userLook) => {
+        console.log("userLook", userLook);
         return $q((resolve, reject) => {
             $http.put(`${FIREBASE_CONFIG.databaseURL}/userLook/${userLook.id}.json`,
              JSON.stringify(userLook)
@@ -116,6 +117,20 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         });
     };
 
+    let deleteLook = (id) => {
+            return $q((resolve, reject) => {
+                $http.delete(`${FIREBASE_CONFIG.databaseURL}/userLook/${id}.json`)
+                    .then((resultz) => {
+                        resolve(resultz);
+                    })
+                    .catch((error) => {
+                        reject(error);
+                    });
+            });
+        };
 
-    return { getShirtsList: getShirtsList, getPantsList: getPantsList, getSingleShirt: getSingleShirt, postNewLook: postNewLook, setLastSelectedShirt: setLastSelectedShirt, getSinglePant: getSinglePant, setLastSelectedPant: setLastSelectedPant, getLastSelectedShirt: getLastSelectedShirt, getLastSelectedPant: getLastSelectedPant, editLook:editLook};
+
+
+
+    return {getShirtsList: getShirtsList, getPantsList: getPantsList, getSingleShirt: getSingleShirt, postNewLook: postNewLook, setLastSelectedShirt: setLastSelectedShirt, getSinglePant: getSinglePant, setLastSelectedPant: setLastSelectedPant, getLastSelectedShirt: getLastSelectedShirt, getLastSelectedPant: getLastSelectedPant, editLook:editLook, deleteLook:deleteLook};
 });
