@@ -1,6 +1,6 @@
 @import 'colors';
 .auth {
-    background: url("/images/0017.jpg") no-repeat center center fixed;
+    background: url("/images/Login-page.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -23,3 +23,31 @@
 	margin-left: -20px;
 }
 
+.name {
+    font-family: Riesling;
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    color: #999;
+}
+
+.name-2 {
+    // font-family: Riesling;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    margin-top: -30px;
+    color: #999;
+}
+.logo-header {
+    height: 455px;
+    width: 100%;
+    margin-top: -119px;
+    margin-bottom: -115px;
+}
+
+
+.navbar {
+    background-color: #000;
+border-radius: 0;     
+}

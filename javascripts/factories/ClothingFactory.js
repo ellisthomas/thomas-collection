@@ -79,12 +79,10 @@ app.factory("ClothingFactory", function($q, $http, FIREBASE_CONFIG) {
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/pants/${id}.json`)
                 .then((resultz) => {
-                    // console.log("resultz", resultz);
                     let singlePant = resultz.data;
                     if (singlePant !== null) {
                         singlePant.id = id;
                     }
-                    console.log("resultz.data", resultz.data);
                     resolve(resultz.data);
                 }).catch((error) => {
                     reject(error);

@@ -1,12 +1,11 @@
-<input type="text" name="" placeholder="Search for ..." ng-model="searchText">
+<input class="list-inline center-block text-center input-lg" type="text" name="" placeholder="Search..." ng-model="searchText">
 <h3>Collection Plate</h3>
 
 <div>
-    <h4>Outfit</h4>
-    <div col-xs-4>
-        Shirt Selected: {{outfit.shirt}}
+    <div ng-if="!user.uid" col-xs-4>
+       <p>Shirt Selected: {{outfit.shirt}}</p>
     </div>
-    <div col-xs-4>
+    <div ng-if="!user.uid" col-xs-4>
         Pants Selected: {{outfit.pants}}
     </div>
     <div col-xs-4>

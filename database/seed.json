@@ -63,10 +63,16 @@
             "title": "Casual"
         },
         "userLook1": {
-            "uid": "1eBcl7sq2ueiOy9MVHAJO4uO1SF2",
+            "uid": "cX8gL21RO1VYSjUwP9H80K4p0c92",
             "usershirtId": "shirt1",
             "userpantId": "pant1",
             "title": "Hipster"
+        },
+        "userLook2": {
+            "uid": "1eBcl7sq2ueiOy9MVHAJO4uO1SF2",
+            "usershirtId": "shirt2",
+            "userpantId": "pant2",
+            "title": "Preppy"
         }
     },
     "users": {
