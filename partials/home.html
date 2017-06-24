@@ -1,5 +1,9 @@
-<input class="list-inline center-block text-center input-lg" type="text" name="" placeholder="Search..." ng-model="searchText">
-<h3>Collection Plate</h3>
+<h3 class="list-inline center-block text-center">Collection Plate</h3> 
+<input class="list-inline center-block text-center input-mg" type="text" name="" placeholder="Search..." ng-model="searchText">
+
+
+
+<h2 class="list-inline center-block text-center direction">*Select a shirt and a pair of pants to create your look*</h2>
 
 <div>
     <div ng-if="!user.uid" col-xs-4>
@@ -7,9 +11,6 @@
     </div>
     <div ng-if="!user.uid" col-xs-4>
         Pants Selected: {{outfit.pants}}
-    </div>
-    <div col-xs-4>
-        <button ng-click="viewLookBook()">See Outfit</button>
     </div>
 </div>
 
@@ -40,5 +41,9 @@
         </div>
     <!-- </div> -->
 </div>
+
+<div col-xs-4>
+        <button class="list-inline center-block text-center" ng-click="viewLook()">See Outfit</button>
+    </div>
 
 

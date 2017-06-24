@@ -1,15 +1,15 @@
 {
     "shirts": {
         "shirt0": {
-            "title": "Red",
+            "title": "Blouse",
             "image": "/images/IMG_2455.JPG"
         },
         "shirt1": {
-            "title": "Blue",
+            "title": "Tank",
             "image": "/images/0087.jpg"
         },
         "shirt2": {
-            "title": "Green",
+            "title": "Tee",
             "image": "/images/0088.jpg"
         }
     },
@@ -29,15 +29,15 @@
     },
     "pants": {
         "pant0": {
-            "title": "Black",
+            "title": "Jeans",
             "image": "/images/IMG_2452.JPG"
         },
         "pant1": {
-            "title": "Orange",
+            "title": "Leggings",
             "image": "/images/IMG_2455.JPG"
         },
         "pant2": {
-            "title": "Yellow",
+            "title": "Sweat Pants",
             "image": "/images/IMG_2456.JPG"
         }
     },

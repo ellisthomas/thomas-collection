@@ -1,21 +1,15 @@
-<!-- <div ng-repeat="look in looks">
-    <div col-xs-4>
-        <p>Username: {{user.username}}</p>
-        <p>Title: {{look.title.uid}}</p>
-        <img ng-src="{{look.shirtimage.uid}}" alt="">
-        <img ng-src="{{look.pantimage.uid}}">
-        <button class="btn btn-default"><a ng-href="#!/style/edit/{{look.id}}">Edit</a></button>
-        <button class="btn btn-danger" ng-click="deleteLook(look.id)">Delete</button>
-    </div>
+<h1>User Looks</h1>
+
+<div>
+	<img class="ex-look" ng-src="/images/cover.jpg">
 </div>
- -->
-<div ng-repeat="oufit in oufits">
-    <div col-xs-4>
+
+
+<div ng-repeat="outfit in outfits">
+    <div col-xs-12>
         <p>Username: {{user.username}}</p>
         <p>Title: {{outfit.title}}</p>
-        <img ng-src="{{oufit.shirtimage}}" alt="">
-        <img ng-src="{{oufit.pantimage}}">
-        <button class="btn btn-default"><a ng-href="#!/style/edit/{{mylook.id}}">Edit</a></button>
-        <button class="btn btn-danger" ng-click="deleteLook(look.id)">Delete</button>
+        <img class="img-rounded" ng-src="{{outfit.shirtimage}}" alt="">
+        <img class="img-rounded" ng-src="{{outfit.pantimage}}">
     </div>
 </div>

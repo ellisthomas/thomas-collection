@@ -31,14 +31,17 @@ app.controller("StyleCtrl", function($rootScope, $http, $location, $q, $scope, F
 
 ///////// Getting data is not defined inside catch
 
+    $scope.outfits = [];
 
     let getAllLooks = (userLook) => {
         StyleFactory.displayUserLooks($rootScope.user.uid).then((outfitz) => {
-                console.log("results outfitz", outfitz);
-                $scope.outfits.data = outfitz.data;
+                $scope.outfits = outfitz;
+                console.log("results $scope.outfits", $scope.outfits);
             }).catch((error) => {
                 console.log("error", error);
             });
     };
     getAllLooks();
 });
+
+

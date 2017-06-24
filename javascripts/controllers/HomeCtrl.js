@@ -41,7 +41,7 @@ app.controller("HomeCtrl", function($rootScope, $location, $scope, ClothingFacto
         $scope.outfit.pants = true;
     };
 
-    $scope.viewLookBook = () => {
+    $scope.viewLook = () => {
     	$location.url("/look");
     };
 

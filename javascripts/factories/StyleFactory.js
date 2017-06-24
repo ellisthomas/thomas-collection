@@ -71,6 +71,7 @@ app.factory("StyleFactory", function($http, $q, FIREBASE_CONFIG, ClothingFactory
           Object.keys(outfitCollection).forEach((key) =>{
             outfitCollection[key].id=key;
             outfitz.push(outfitCollection[key]);
+            console.log("outfitz", outfitz);
           });
         }
         outfitz.forEach((outfit) => {
