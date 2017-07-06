@@ -2,15 +2,15 @@
     "shirts": {
         "shirt0": {
             "title": "Blouse",
-            "image": "/images/IMG_2455.JPG"
+            "image": "/images/shirt0.jpg"
         },
         "shirt1": {
             "title": "Tank",
-            "image": "/images/0087.jpg"
+            "image": "/images/shirt1.jpg"
         },
         "shirt2": {
             "title": "Tee",
-            "image": "/images/0088.jpg"
+            "image": "/images/shirt2.jpg"
         }
     },
     "userShirts": {
@@ -30,15 +30,27 @@
     "pants": {
         "pant0": {
             "title": "Jeans",
-            "image": "/images/IMG_2452.JPG"
+            "image": "/images/jean0.jpg"
         },
         "pant1": {
             "title": "Leggings",
-            "image": "/images/IMG_2455.JPG"
+            "image": "/images/jean1.jpg"
         },
         "pant2": {
             "title": "Sweat Pants",
-            "image": "/images/IMG_2456.JPG"
+            "image": "/images/jean2.jpg"
+        },
+        "pant3": {
+            "title": "blah",
+            "image": "/images/jean3.jpg"
+        },
+        "pant4": {
+            "title": "blah blah",
+            "image": "/images/shorts0.jpg"
+        },
+        "pant5": {
+            "title": "what",
+            "image": "/images/jean4.jpg"
         }
     },
     "userPants": {
