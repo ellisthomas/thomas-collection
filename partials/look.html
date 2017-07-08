@@ -8,12 +8,12 @@
 
         <div col-xs-4>
             <h3>Outfit</h3>
-                Selected Shirt: <img class="outfit" ng-src="{{shirt.image}}" alt="" ng-if="!editTitle">
+                <img class="outfit center" ng-src="{{shirt.image}}" alt="" ng-if="!editTitle">
                 
         </div>
 
         <div col-xs-4>
-            Selected Pant: <img class="outfit" ng-src="{{pant.image}}" alt="" ng-if="!editTitle">
+           <img class="outfit center" ng-src="{{pant.image}}" alt="" ng-if="!editTitle">
 
         </div>   
 
@@ -22,7 +22,7 @@
 
         <button class="btn btn-default" ng-if="!editTitle" ng-click="addNewStyle(title)">Create Collection</button>
 
-        <button class="btn btn-danger" ng-if="editTitle" ng-click="editLook(userLook)">Edit Look</button>
+        <button class="btn btn-danger" ng-if="editTitle" ng-click="editLook(userLook)">Edit Name</button>
 </div>
 
 
