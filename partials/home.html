@@ -1,49 +1,48 @@
-<h3 class="list-inline center-block text-center">Collection Plate</h3> 
+<h3 class="list-inline center-block text-center">Collection Plate</h3>
 <input class="list-inline center-block text-center input-mg" type="text" name="" placeholder="Search..." ng-model="searchText">
-
-
-
 <h2 class="list-inline center-block text-center direction">*Select a shirt and a pair of pants to create your look*</h2>
-
 <div>
     <div ng-if="!user.uid" col-xs-4>
-       <p>Shirt Selected: {{outfit.shirt}}</p>
+        <p>Shirt Selected: {{outfit.shirt}}</p>
     </div>
     <div ng-if="!user.uid" col-xs-4>
         Pants Selected: {{outfit.pants}}
     </div>
 </div>
-
-
-<div ng-repeat="shirt in shirts | filter: searchText">
-    <!-- <div class="row"> -->
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a ng-href="{{shirt.image}}"><img ng-src="{{shirt.image}}" alt=""></a>
-                <div class="caption">
-                    <p>{{shirt.title}}</p>
-                 <button class="fa fa-plus-circle" aria-hidden="true" ng-click="addShirtLook(shirt)"></button>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div ng-repeat="shirt in shirts | filter: searchText">
+                <div class="col-md-4 col-sm-6">
+                    <div class="thumbnail">
+                        <a ng-href="{{shirt.image}}"><img ng-src="{{shirt.image}}" alt=""></a>
+                        <div class="caption">
+                            <!-- <p>{{shirt.title}}</p> -->
+                            <button class="fa fa-plus-circle" aria-hidden="true" ng-click="addShirtLook(shirt)"></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    <!-- </div> -->
-</div>
-<div ng-repeat="pant in pants | filter: searchText">
-    <!-- <div class="row"> -->
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a ng-href="{{pant.image}}"><img ng-src="{{pant.image}}" alt=""></a>
-                <div class="caption">
-                    <p>{{pant.title}}</p>
-                    <button class="fa fa-plus-circle" aria-hidden="true" ng-click="addPantLook(pant)"></button>
-                </div>
-            </div>
-        </div>
-    <!-- </div> -->
-</div>
-
-<div col-xs-4>
-        <button class="list-inline center-block text-center" ng-click="viewLook()">See Outfit</button>
     </div>
-
-
+</div>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div ng-repeat="pant in pants | filter: searchText">
+                <div class="col-md-4 col-sm-6">
+                    <div class="thumbnail">
+                        <a ng-href="{{pant.image}}"><img ng-src="{{pant.image}}" alt=""></a>
+                        <div class="caption">
+                            <!-- <p>{{pant.title}}</p> -->
+                            <button class="fa fa-plus-circle" aria-hidden="true" ng-click="addPantLook(pant)"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div col-xs-4>
+    <button class="list-inline center-block text-center" ng-click="viewLook()">See Outfit</button>
+</div>

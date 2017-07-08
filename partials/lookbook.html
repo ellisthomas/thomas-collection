@@ -1,15 +1,17 @@
-<h1>User Looks</h1>
+<h1 class="list-inline center-block text-center">User Looks</h1>
 
 <div>
-	<img class="ex-look" ng-src="/images/cover.jpg">
+	<img class="ex-look col-xs-4 col-xs-offset-4" ng-src="/images/cover.jpg">
 </div>
 
 
 <div ng-repeat="outfit in outfits">
-    <div col-xs-12>
+    <div class="col-xs-3">
         <p>Username: {{user.username}}</p>
         <p>Title: {{outfit.title}}</p>
-        <img class="img-rounded" ng-src="{{outfit.shirtimage}}" alt="">
-        <img class="img-rounded" ng-src="{{outfit.pantimage}}">
+        <div class="thumbnail">
+        <img ng-src="{{outfit.shirtimage}}" alt="">
+        <img ng-src="{{outfit.pantimage}}">
+        </div>
     </div>
 </div>

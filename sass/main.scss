@@ -28,6 +28,11 @@
     height: 250px;
 }
 
+.look-book-images {
+    width: 550px;
+    height: 250px;
+}
+
 .name {
     font-family: Riesling;
     display: flex;
@@ -82,4 +87,186 @@
 
 .outfit {
     width: 350px;
+}
+
+// login page
+
+//variables
+$bg-color: #f9ccb4;
+$border-color: #bfbfbf;
+$btn-color: #d05715;
+//font
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600);
+//mixins
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+}
+
+@mixin transition($transition) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content
+  }
+  :-moz-placeholder {
+    @content
+  }
+  ::-moz-placeholder {
+    @content
+  }
+  :-ms-input-placeholder {
+    @content
+  }
+}
+
+body {
+  background-color: $bg-color;
+  font-size: 18px;
+}
+
+.container {
+  width: 1000px;
+  height: 600px;
+  margin: 100px auto;
+  @include border-radius(4px);
+  background-color: #fff;
+  -webkit-box-shadow: 0 10px 100px rgba(0, 0, 0, .3);
+  -moz-box-shadow: 0 10px 100px rgba(0, 0, 0, .3);
+  box-shadow: 0 10px 100px rgba(0, 0, 0, .3);
+  .login-form {
+    padding: 100px 40px;
+    width: calc(100% - 710px);
+    display: inline-block;
+    float: left;
+    position: relative;
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.667em;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 0 0 40px 0;
+    }
+    input {
+      display: block;
+      border: none;
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: solid 1px $border-color;
+      font-family: 'Source Sans Pro', sans-serif;
+      @include transition (all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1));
+      color: #0e6252;
+      margin-bottom: 45px;
+      font-size: 1em;
+      &:focus,
+      &:valid {
+        box-shadow: none;
+        outline: none;
+        background-position: 0 0;
+      }
+      &:focus {
+        border-color: $btn-color;
+      }
+      &::-webkit-input-placeholder {
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+      &:focus {
+        &::-webkit-input-placeholder {
+          color: $btn-color;
+          font-size: 0.778em;
+          -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+          visibility: visible;
+        }
+      }
+    }
+    .login-btn {
+      background-color: $btn-color;
+      border: 0;
+      color: #fff;
+      padding: 15px 55px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1em;
+      cursor: pointer;
+      text-transform: uppercase;
+      @include border-radius(30px);
+      &:hover {}
+      &:focus {
+        outline: none;
+      }
+    }
+    .login-btn[disabled] {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: .65;
+    }
+    ul {
+      margin: 0;
+      padding: 0 40px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      li {
+        list-style-type: none;
+        display: inline-block;
+        &:last-child {
+          float: right;
+        }
+        a {
+          text-decoration: none;
+          color: $btn-color;
+          font-family: 'Source Sans Pro', sans-serif;
+        }
+      }
+    }
+  }
+  .img-content {
+    width: calc(100% - 370px);
+    height: 100px;
+    display: inline-block;
+    background-image: url("/images/Login-page.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    h1 {
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 95px;
+    }
+    a {
+      float: right;
+      margin: 30px 30px 0 0;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 600;
+    }
+    p {
+      margin: 0;
+      color: #fff;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 300;
+      text-align: center;
+      font-size: 2.222em;
+      margin-top: 120px;
+      padding: 0 100px
+    }
+  }
+  .error-text{
+    margin:0;
+    color: tomato;
+    font-family: 'Montserrat', sans-serif;
+    margin-top:-20px;
+  }
 }
