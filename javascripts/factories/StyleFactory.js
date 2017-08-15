@@ -13,7 +13,6 @@ app.factory("StyleFactory", function($http, $q, FIREBASE_CONFIG, ClothingFactory
 
     let getUserShirt = (style) => {
         ClothingFactory.getSingleShirt(style.usershirtId).then((shirtData) => {
-            // console.log("shirtData", shirtData);
             style.shirtimage = shirtData.image;
         }).catch((error) => {
             console.log("error in getUserShirt", error);
@@ -22,7 +21,6 @@ app.factory("StyleFactory", function($http, $q, FIREBASE_CONFIG, ClothingFactory
 
     let getUserPant = (style) => {
         ClothingFactory.getSinglePant(style.userpantId).then((pantData) => {
-            // console.log("pantData", pantData);
             style.pantimage = pantData.image;
         }).catch((error) => {
             console.log("error in getUserPant", error);
@@ -51,12 +49,9 @@ app.factory("StyleFactory", function($http, $q, FIREBASE_CONFIG, ClothingFactory
                             stylez.push(styleCollection[key]);
                         });
                     }
-                    // console.log("stylez", stylez);
                     stylez.forEach((style) => {
                         getUserShirt(style);
                         getUserPant(style);
-                        // console.log("style.userpantId", style.userpantId);
-                        // console.log("style.usershirtId", style.usershirtId);
                     });
                     resolve(stylez);
                 }).catch((error) => {
@@ -65,12 +60,37 @@ app.factory("StyleFactory", function($http, $q, FIREBASE_CONFIG, ClothingFactory
         });
     };
 
+  let displayUserLooks = (userId) => {
+    let outfitz = [];
+    return $q((resolve, reject)=>{
+      $http.get(`${FIREBASE_CONFIG.databaseURL}/userLook.json`)
+    .then((resultz)=>{
+      let outfitCollection = resultz.data;
+      console.log("resultz.data", resultz.data);
+        if (outfitCollection !== null) {
+          Object.keys(outfitCollection).forEach((key) =>{
+            outfitCollection[key].id=key;
+            outfitz.push(outfitCollection[key]);
+            console.log("outfitz", outfitz);
+          });
+        }
+        outfitz.forEach((outfit) => {
+            getUserShirt(outfit);
+            getUserPant(outfit);
+        });
+      resolve(outfitz);
+    }).catch((error)=>{
+      console.log("error in viewoutfit", error);
+    });
+  });
+};
+
+    
     let getSingleUserLook = (id) => {
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/userLook/${id}.json`)
             .then((resultz) => {
                 resultz.data.id = id;
-                console.log("resultz", resultz);
                 resolve(resultz.data);
             }).catch((error) => {
             reject(error);
@@ -79,22 +99,9 @@ app.factory("StyleFactory", function($http, $q, FIREBASE_CONFIG, ClothingFactory
     };
 
 
-  
-    let deletzStyle = (id) => {
-            return $q((resolve, reject) => {
-                $http.delete(`${FIREBASE_CONFIG.databaseURL}/userLook/${id}.json`)
-                    .then((resultz) => {
-                        resolve(resultz);
-                    })
-                    .catch((error) => {
-                        reject(error);
-                    });
-            });
-        };
 
 
-
-    return {getUserLook:getUserLook, getUserPant:getUserPant, getUserShirt:getUserShirt, deletzStyle:deletzStyle, setUserSelectedShirt:setUserSelectedShirt, setUserSelectedPant:setUserSelectedPant, getUserSelectedShirt:getUserSelectedShirt, getUserSelectedPant:getUserSelectedPant, getSingleUserLook:getSingleUserLook};
+    return {getUserLook:getUserLook, getUserPant:getUserPant, getUserShirt:getUserShirt, setUserSelectedShirt:setUserSelectedShirt, setUserSelectedPant:setUserSelectedPant, getUserSelectedShirt:getUserSelectedShirt, getUserSelectedPant:getUserSelectedPant, getSingleUserLook:getSingleUserLook, displayUserLooks:displayUserLooks};
 
 
 });

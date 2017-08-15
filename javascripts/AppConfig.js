@@ -62,6 +62,11 @@ app.config(function($routeProvider) {
             templateUrl: "partials/look.html",
             controller: "LookCtrl",
             resolve: {isAuth}
+          })
+        .when("/lookbook", {
+            templateUrl: "partials/lookbook.html",
+            controller: "StyleCtrl",
+            resolve: {isAuth}
         })
         .when("/style", {
             templateUrl: "partials/style.html",

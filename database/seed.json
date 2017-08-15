@@ -1,16 +1,16 @@
 {
     "shirts": {
         "shirt0": {
-            "title": "Red",
-            "image": "/images/IMG_2455.JPG"
+            "title": "Blouse",
+            "image": "/images/shirt0.jpg"
         },
         "shirt1": {
-            "title": "Blue",
-            "image": "/images/0087.jpg"
+            "title": "Tank",
+            "image": "/images/shirt1.jpg"
         },
         "shirt2": {
-            "title": "Green",
-            "image": "/images/0088.jpg"
+            "title": "Tee",
+            "image": "/images/shirt2.jpg"
         }
     },
     "userShirts": {
@@ -29,16 +29,28 @@
     },
     "pants": {
         "pant0": {
-            "title": "Black",
-            "image": "/images/IMG_2452.JPG"
+            "title": "Jeans",
+            "image": "/images/jean0.jpg"
         },
         "pant1": {
-            "title": "Orange",
-            "image": "/images/IMG_2455.JPG"
+            "title": "Leggings",
+            "image": "/images/jean1.jpg"
         },
         "pant2": {
-            "title": "Yellow",
-            "image": "/images/IMG_2456.JPG"
+            "title": "Sweat Pants",
+            "image": "/images/jean2.jpg"
+        },
+        "pant3": {
+            "title": "blah",
+            "image": "/images/jean3.jpg"
+        },
+        "pant4": {
+            "title": "blah blah",
+            "image": "/images/shorts0.jpg"
+        },
+        "pant5": {
+            "title": "what",
+            "image": "/images/jean4.jpg"
         }
     },
     "userPants": {
@@ -63,10 +75,16 @@
             "title": "Casual"
         },
         "userLook1": {
-            "uid": "1eBcl7sq2ueiOy9MVHAJO4uO1SF2",
+            "uid": "cX8gL21RO1VYSjUwP9H80K4p0c92",
             "usershirtId": "shirt1",
             "userpantId": "pant1",
             "title": "Hipster"
+        },
+        "userLook2": {
+            "uid": "1eBcl7sq2ueiOy9MVHAJO4uO1SF2",
+            "usershirtId": "shirt2",
+            "userpantId": "pant2",
+            "title": "Preppy"
         }
     },
     "users": {

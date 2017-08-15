@@ -18,13 +18,6 @@ app.controller("StyleCtrl", function($rootScope, $http, $location, $q, $scope, F
     getLooks();
 
 
-    $scope.inputChange = (userLook) => {
-        ClothingFactory.editLook(userLook).then(() => {
-            console.log("userLook", userLook);
-        }).catch((error) => {
-            console.log("inputChange error", error);
-        });
-    };
 
     $scope.deleteLook = (id) => {
 
@@ -35,4 +28,20 @@ app.controller("StyleCtrl", function($rootScope, $http, $location, $q, $scope, F
                 console.log("error on deleteLook", error);
             });
     };
+
+///////// Getting data is not defined inside catch
+
+    // $scope.outfits = [];
+
+    let getAllLooks = (userLook) => {
+        StyleFactory.displayUserLooks($rootScope.user.uid).then((outfitz) => {
+                $scope.outfits = outfitz;
+                console.log("results $scope.outfits", $scope.outfits);
+            }).catch((error) => {
+                console.log("error", error);
+            });
+    };
+    getAllLooks();
 });
+
+

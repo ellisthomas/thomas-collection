@@ -1,5 +1,13 @@
+  <div>
+    <h1 class="name">THOMAS COLLECTION</h1>
+    <h2 class="name-2"><strong>CLOTHING</strong></h2>
+  </div>
+    <!-- <div ng-if="user.uid">
+      <img class="logo-header" ng-src="/images/cover.jpg">
+      
+    </div> -->
 
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -10,10 +18,22 @@
         <span class="icon-bar"></span>
       </button>
 
-<a class="navbar-brand" ng-href="#!/home"><img class="logo" ng-src="/images/Untitled47.png" ng-if="user.uid"></a>
+
+
+    <li><a class="navbar-brand" href="#!/home" ng-if="user.uid">Home</a></li>
 
 
     </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" >
+       
+        
+      </ul>
+     <ul class="nav navbar-nav navbar-right" ng-if="user.uid">
+      <li><a ng-href="#!/lookbook{{userLook.uid}}">LookBook</a></li>
+      <li><a ng-href="#!/logout">Logout</a></li>
 
       <!--   <li><a href="https://www.instagram.com/thomas_collection_clothing/"><img src="/images/instagram.svg" alt="twitter"></a></li>
         <li><a href="https://twitter.com/TC_Clothing2004"><img src="/images/twitter.svg" alt="twitter"></a></li>

@@ -2,7 +2,6 @@ app.controller("LookCtrl", function($rootScope, $http, $location, $q, $scope, FI
 
     let lastSelectedShirt = ClothingFactory.getLastSelectedShirt();
     ClothingFactory.getSingleShirt(lastSelectedShirt).then((results) => {
-        // console.log("results in shirts", results);
         $scope.shirt = results;
     }).catch((error) => {
         console.log("error in lastSelectedShirt", error);
@@ -11,7 +10,6 @@ app.controller("LookCtrl", function($rootScope, $http, $location, $q, $scope, FI
     let lastSelectedPant = ClothingFactory.getLastSelectedPant();
     console.log("lastSelectedPant", lastSelectedPant);
     ClothingFactory.getSinglePant(lastSelectedPant).then((results) => {
-        // console.log("results in pants", results);
         $scope.pant = results;
     }).catch((error) => {
         console.log("error in lastSelectedPant", error);
