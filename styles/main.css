@@ -1,5 +1,7 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600);
 .auth {
-  background: url("/images/Login-page.jpg") no-repeat center center fixed;
+  background: url("/images/0017.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -19,6 +21,10 @@
   margin-left: -20px; }
 
 .ex-look {
+  width: 550px;
+  height: 250px; }
+
+.look-book-images {
   width: 550px;
   height: 250px; }
 
@@ -65,5 +71,132 @@
   color: gray; }
 
 .outfit {
-  width: 400px;
-  height: 200px; }
+  width: 350px; }
+
+body {
+  background-color: #f9ccb4;
+  font-size: 18px; }
+
+.container {
+  width: 1000px;
+  height: 600px;
+  margin: 100px auto;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 10px 100px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 10px 100px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 100px rgba(0, 0, 0, 0.3); }
+  .container .login-form {
+    padding: 100px 40px;
+    width: calc(100% - 710px);
+    display: inline-block;
+    float: left;
+    position: relative; }
+    .container .login-form h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.667em;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 0 0 40px 0; }
+    .container .login-form input {
+      display: block;
+      border: none;
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: solid 1px #bfbfbf;
+      font-family: 'Source Sans Pro', sans-serif;
+      -moz-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+      -o-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+      -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+      transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+      color: #0e6252;
+      margin-bottom: 45px;
+      font-size: 1em; }
+      .container .login-form input:focus, .container .login-form input:valid {
+        box-shadow: none;
+        outline: none;
+        background-position: 0 0; }
+      .container .login-form input:focus {
+        border-color: #d05715; }
+      .container .login-form input::-webkit-input-placeholder {
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out; }
+      .container .login-form input:focus::-webkit-input-placeholder {
+        color: #d05715;
+        font-size: 0.778em;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+        visibility: visible; }
+    .container .login-form .login-btn {
+      background-color: #d05715;
+      border: 0;
+      color: #fff;
+      padding: 15px 55px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1em;
+      cursor: pointer;
+      text-transform: uppercase;
+      border-radius: 30px;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      -ms-border-radius: 30px;
+      -o-border-radius: 30px; }
+      .container .login-form .login-btn:focus {
+        outline: none; }
+    .container .login-form .login-btn[disabled] {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: .65; }
+    .container .login-form ul {
+      margin: 0;
+      padding: 0 40px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0; }
+      .container .login-form ul li {
+        list-style-type: none;
+        display: inline-block; }
+        .container .login-form ul li:last-child {
+          float: right; }
+        .container .login-form ul li a {
+          text-decoration: none;
+          color: #d05715;
+          font-family: 'Source Sans Pro', sans-serif; }
+  .container .img-content {
+    width: calc(100% - 370px);
+    height: 100px;
+    display: inline-block;
+    background-image: url("/images/Login-page.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center; }
+    .container .img-content h1 {
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 95px; }
+    .container .img-content a {
+      float: right;
+      margin: 30px 30px 0 0;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 600; }
+    .container .img-content p {
+      margin: 0;
+      color: #fff;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 300;
+      text-align: center;
+      font-size: 2.222em;
+      margin-top: 120px;
+      padding: 0 100px; }
+  .container .error-text {
+    margin: 0;
+    color: tomato;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -20px; }
