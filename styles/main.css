@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:700);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600);
 .auth {
-  background: url("images/0017.jpg") no-repeat center center fixed;
+  background: url("/images/Login-page.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -74,7 +74,7 @@
   width: 350px; }
 
 body {
-  background-color: #f9ccb4;
+  background-color: #fff;
   font-size: 18px; }
 
 .container {
@@ -132,7 +132,7 @@ body {
         transform: translateY(-20px);
         visibility: visible; }
     .container .login-form .login-btn {
-      background-color: #d05715;
+      background-color: #fff;
       border: 0;
       color: #fff;
       padding: 15px 55px;
