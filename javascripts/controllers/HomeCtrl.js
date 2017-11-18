@@ -45,4 +45,5 @@ app.controller("HomeCtrl", function($rootScope, $location, $scope, ClothingFacto
     	$location.url("/look");
     };
 
+
 });

@@ -24,19 +24,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav" >
-        <li><a class="navbar-brand" href="#!/home" ng-if="user.uid">Home</a></li>
-        <li><a ng-href="#!/lookbook{{userLook.uid}}" ng-if="user.uid">LookBook</a></li>
+        <li><a class="navbar-brand fa fa-home fa-2x" href="#!/home" ng-if="user.uid"></a></li>
+        <li><a class="fa fa-binoculars" ng-href="#!/lookbook{{userLook.uid}}" ng-if="user.uid">LookBook</a></li>
         
       </ul>
      <ul class="nav navbar-nav navbar-right" ng-if="user.uid">
       
-      <li><a ng-href="#!/logout">Logout</a></li>
+      <li><a ng-href="#!/logout" class="fa fa-sign-out">Sign Out</a></li>
 
-        <li><a href="https://www.instagram.com/thomas_collection_clothing/"><img src="/images/instagram.svg" alt="instagram"></a></li>
-        <li><a href="https://twitter.com/TC_Clothing2004"><img src="/images/twitter.svg" alt="twitter"></a></li>
-        <li><a href="https://www.facebook.com/ThomasCollectionClothingLLC/"><img src="/images/facebook.svg" alt="facebook"></a></li> 
-          </ul>
     </div><!-- /.navbar-collapse -->
 
   </div><!-- /.container-fluid -->
 </nav>
+
